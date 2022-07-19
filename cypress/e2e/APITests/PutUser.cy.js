@@ -21,17 +21,17 @@ describe('post user request', () => {
                 'Authorization': 'Bearer ' + accessToken
             },
             body: {
-                "name": "Test Automation Cypress",
+                "name": "Test Automation in Cypress",
                 "gender": "male",
-                "email": "aayush12@gmail.com",
+                "email": "aayush123@gmail.com",
                 "status": "active"
             }
 
         }).then((res) => {
             cy.log(JSON.stringify(res))
             expect(res.status).to.eq(201)
-            expect(res.body.data).has.property('email', 'aayush12@gmail.com')
-            expect(res.body.data).has.property('name', 'Test Automation Cypress')
+            expect(res.body.data).has.property('email', 'aayush123@gmail.com')
+            expect(res.body.data).has.property('name', 'Test Automation in Cypress')
             expect(res.body.data).has.property('status', 'active')
             expect(res.body.data).has.property('gender', 'male')
         }).then((res) => {
@@ -45,15 +45,15 @@ describe('post user request', () => {
                     'Authorization': 'Bearer ' + accessToken
                 },
                 body: {
-                    "name": "Test Automation Cypress Updated",
+                    "name": "Test Automation Cypress is Updated",
                     "gender": "male",
-                    "email": "aayushk12@gmail.com",
+                    "email": "aayushk123@gmail.com",
                     "status": "inactive"
                 }
             }).then((res) => {
                 expect(res.status).to.eq(200)
-                expect(res.body.data).has.property('email', 'aayushk12@gmail.com')
-                expect(res.body.data).has.property('name', 'Test Automation Cypress Updated')
+                expect(res.body.data).has.property('email', 'aayushk123@gmail.com')
+                expect(res.body.data).has.property('name', 'Test Automation Cypress is Updated')
                 expect(res.body.data).has.property('status', 'inactive')
                 expect(res.body.data).has.property('gender', 'male')
             })
