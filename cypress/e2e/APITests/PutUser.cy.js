@@ -23,14 +23,14 @@ describe('post user request', () => {
             body: {
                 "name": "Test Automation in Cypress",
                 "gender": "male",
-                "email": "aayushgupta@gmail.com",
+                "email": "aayushgupta1@gmail.com",
                 "status": "active"
             }
 
         }).then((res) => {
             cy.log(JSON.stringify(res))
             expect(res.status).to.eq(201)
-            expect(res.body.data).has.property('email', 'aayushgupta@gmail.com')
+            expect(res.body.data).has.property('email', 'aayushgupta1@gmail.com')
             expect(res.body.data).has.property('name', 'Test Automation in Cypress')
             expect(res.body.data).has.property('status', 'active')
             expect(res.body.data).has.property('gender', 'male')
@@ -47,12 +47,12 @@ describe('post user request', () => {
                 body: {
                     "name": "Test Automation Cypress is Updated",
                     "gender": "male",
-                    "email": "aayushkhandelwal@gmail.com",
+                    "email": "aayushkhandelwal1@gmail.com",
                     "status": "inactive"
                 }
             }).then((res) => {
                 expect(res.status).to.eq(200)
-                expect(res.body.data).has.property('email', 'aayushkhandelwal@gmail.com')
+                expect(res.body.data).has.property('email', 'aayushkhandelwal1@gmail.com')
                 expect(res.body.data).has.property('name', 'Test Automation Cypress is Updated')
                 expect(res.body.data).has.property('status', 'inactive')
                 expect(res.body.data).has.property('gender', 'male')
