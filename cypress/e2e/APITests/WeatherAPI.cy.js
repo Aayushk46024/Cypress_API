@@ -5,7 +5,7 @@ describe('check weather informaiton', ()=>{
         //1st request: GET locations 
         cy.request({
               method: 'GET',
-              url: 'https://api.openweathermap.org/data/2.5/weather?q=London&appid={API key}',
+              url: 'https://api.openweathermap.org/data/2.5/weather?q=London,uk&callback=test&appid={API_key}',
               headers: {
                 'API key': API_key
             },
